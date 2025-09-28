@@ -3,14 +3,15 @@
 
 using namespace std;
 
-
 int main()
 {
     float x, y;
-    double R, S;
     cin >> x >> y;
-    R = pow(cos(y * y / x), -1);
-    S = pow(x + log(1 / x), 1 / 3);
-    cout << max(R, S);
+
+    if (x == 0 || x <= 0) {
+        return 1;
+    }
+    cout << max(1.0 / cos(y * y / x), pow(x + log(1.0 / x), 1.0 / 3.0));
+
     return 0;
 }
